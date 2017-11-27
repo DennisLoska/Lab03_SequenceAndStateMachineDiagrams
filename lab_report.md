@@ -16,7 +16,11 @@ Von den obern gennanten Use Cases haben wir uns für **timeTick()** entschieden:
 
 ![timeTick](useCase_timeTick.jpg)
 
-**HIER KOMMT DEIN KONTENT REIN AI!!!!!**
+**timeick()**
+A look upon the repository reveals that clock is the main iniator as it also initiate an instance of Timethread which is derived from Thread. timeTick() itself is nested within different methods and various methods from timeTick are instance methods of several different classes maing it challenging to define the process. Additionally, the most challenging struggle involved the if-statements as there are several ways on how to implement it. Open questions are:
+
+1. How do we deal with if/else structurally?
+2. How to handle the nesting of several instance methods within methods?
 
 #### Now take your scenarios from the second exercise and have a good look at them. There are a number of processes that you should have detailed in your scenarios - if not, now you learn how to be thorough :) You need to draw sequence diagrams for the following use cases:
 
@@ -27,14 +31,16 @@ Von den obern gennanten Use Cases haben wir uns für **timeTick()** entschieden:
 
 ![orderPumpkin](useCase_orderingPumkin.jpg)
 
-**HIER KOMMT DEIN KONTENT REIN AI!!!!!**
+**orderPumpkin()**
+Based on the last submission, the ordering process revolves around the steps login/registration, billing and shipping input as well as order confirmation and the constant validation from several systems including API calls. Challenges: Depending on eCommerce systems ths process has several different implementations fulfilling the class diagrams. 
 
 #### Registration at the HTW Shop
 Neben dem Use Case "Ordering a Pumpkin/Treat" haben wir uns außerdem für ein Use Case entschieden, welches die Registrierung eines Users im HTW-Shop beschreibt.
 
 ![registerShop](useCase_registrationHTWshop.jpg)
 
-**HIER KOMMT DEIN KONTENT REIN AI!!!!!**
+**registerShop()**
+A part of the ordering process involves the registration process which is als crucial in eCommerce. Here, the validation is crucial for the database handling/ design of the implementation of the persistance framework.
 
 ## Part 2: State Machine Diagrams
 
