@@ -52,8 +52,28 @@ Neben dem Use Case "Ordering a Pumpkin/Treat" haben wir uns außerdem für ein U
 
 #### Model the states of a parser that determines if a given string is a proper floating-point number.
 
-**HIER KOMMT DEIN KONTENT REIN TONY!!!!!**
+Der Parser besitzt die folgenden Zustände:
+
+- String
+- ByteArray
+- parseChars
+- notAFloat
+
+Zuerst wird ein String in ein ByteArray konvertiert. Dieses ByteArray wird durchlaufen. Währenddessen wird überprüft ob der derzeitige Character auf seinen Typ überprüft. Ist der Character entweder ein Buchstabe, Sonderzeichen, NULL oder leer handelt es sich um keinen Floating-Point-Value. Handelt es um eine Ziffer oder einen Punkt ruft sich der Zustand selbst auf und der Index wird erhöht bis eine andere Bedingung erfüllt ist. Ist der Index gleich der Länge des Arrays haben wir das gesamte Array durchlaufen und es handelt sich um einen Floating-Point-Value.
+
+![parser-state-diagram](/Users/tweak/CloudStation/IMI/03_Semester/Informatik-03/labs/Lab03_SequenceAndStateMachineDiagrams/parser-state-diagram.jpeg)
+
+
 
 #### Model the states a Pumpkin order in the HTW system can be in.
 
-**HIER KOMMT DEIN KONTENT REIN TONY!!!!!**
+Das HTW System besitz die folgenden Zustände:
+
+- Item in Cart
+- pending
+- cancelled
+- Shipping
+
+Zunächst muss sich der zu erwerbende Gegenstand in der Cart befinden. Von hieraus kann der User den Gegenstand bezahlen womit die Bestellung den Zustand *pending* erhält. Ist die Bezahlung nicht erfolgreich wandert der Gegenstand zurück in die Cart. Ist der Gegenstand zur Zeit nicht auf Lager bleibt die Bestellung solange im Zustand *pending* bis der Gegenstand wieder vorrätig ist. Möchte der User die Bestellung stornieren erhält die Bestellung den Zustand *cancelled* und das System ist beendet. Sind beide Bedingungen erfolgreich erhält die Bestellung den Zustand *shipping*. Konnte der Gegenstand nicht zugestellt werden erhält die Bestellung erneut den Zustand *pending*. Auch in diesem Zustand hat der User noch die Möglichkeit die Bestellung zu stornieren. War die Lieferung jedoch erfolgreich, hat das System seinen finalen Zustand erreicht.
+
+![pumpkin-state-diagram](/Users/tweak/CloudStation/IMI/03_Semester/Informatik-03/labs/Lab03_SequenceAndStateMachineDiagrams/pumpkin-state-diagram.jpeg)
